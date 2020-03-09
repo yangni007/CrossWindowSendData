@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    a page
+</body>
+<script src="../index.js"></script>
+<script>
+    // 在同一个页面不触发storage事件
+    // 监听其他页面的storage事件
+    window.addEventListener('storage', function(e) {
+        console.log(e);
+    })
+   
+    let storage = new CustomStorage;
+    storage.listenLocalStorage(function(e) {
+        console.log(e);
+    })
+    localStorage.setItem('msg', 'value')
+    
+</script>
+</html>
